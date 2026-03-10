@@ -3,6 +3,7 @@ import { ThemeSwitcher } from "./components/ThemeSwitcher";
 import { PreviewButtons } from "./components/PreviewButtons";
 import { PreviewCard } from "./components/PreviewCard";
 import { PreviewCodeBlock } from "./components/PreviewCodeBlock";
+import { THEME_TOKENS } from "./theme-tokens";
 
 const THEMES = ["light", "dark", "neon", "pastel"];
 
@@ -69,16 +70,14 @@ function App() {
 					<p className="section-code__description">
 						Each theme defines the same custom properties on{" "}
 						<code>:root[data-theme="…"]</code>. Components use these
-						so colors update when you switch themes.
+						so colors update when you switch themes. The snippet
+						below always shows the currently selected theme.
 					</p>
-					<PreviewCodeBlock language="css">{`:root[data-theme='light'] {
-  --color-bg: #f5f5f7;
-  --color-surface: #ffffff;
-  --color-text: #111827;
-  --color-primary: #2563eb;
-  --color-accent: #ec4899;
-  --color-border: #e5e7eb;
-}`}</PreviewCodeBlock>
+					<PreviewCodeBlock
+						language="css"
+						theme={theme}
+						tokens={THEME_TOKENS[theme]}
+					/>
 				</section>
 			</main>
 
