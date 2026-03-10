@@ -7,40 +7,78 @@
 }
 
 .preview-button {
+  /* base layout */
   border-radius: 999px;
   border: 1px solid transparent;
   padding: 0.45rem 0.95rem;
   font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
-  background: var(--color-surface-hover);
-  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  /* theme-driven appearance via local custom properties */
+  --btn-bg: var(--color-surface-hover);
+  --btn-bg-hover: var(--color-surface);
+  --btn-border: transparent;
+  --btn-border-hover: var(--color-border);
+  --btn-color: var(--color-text);
+  --btn-shadow: none;
+  --btn-shadow-hover: none;
+
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border-color: var(--btn-border);
+  box-shadow: var(--btn-shadow);
+
+  /* motion + focus */
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out,
+    box-shadow 180ms ease-out,
+    border-color 150ms ease-out,
+    transform 120ms ease-out;
+  transform-origin: center;
+}
+
+.preview-button:hover {
+  background: var(--btn-bg-hover);
+  border-color: var(--btn-border-hover);
+  box-shadow: var(--btn-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.preview-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .preview-button--primary {
-  background: var(--color-primary);
-  color: #ffffff;
-}
-
-.preview-button--primary:hover {
-  background: var(--color-primary-hover);
+  --btn-bg: var(--color-primary);
+  --btn-bg-hover: var(--color-primary-hover);
+  --btn-border: transparent;
+  --btn-border-hover: transparent;
+  --btn-color: #ffffff;
+  --btn-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+  --btn-shadow-hover: 0 18px 38px rgba(37, 99, 235, 0.45);
 }
 
 .preview-button--ghost {
-  background: transparent;
-  border-color: var(--color-border);
-}
-
-.preview-button--ghost:hover {
-  background: var(--color-surface-hover);
+  --btn-bg: transparent;
+  --btn-bg-hover: var(--color-surface-hover);
+  --btn-border: var(--color-border);
+  --btn-border-hover: var(--color-border);
+  --btn-color: var(--color-text);
 }
 
 .preview-button--accent {
-  background: var(--color-accent);
-  color: #ffffff;
-}
-
-.preview-button--accent:hover {
-  background: var(--color-accent-hover);
+  --btn-bg: var(--color-accent);
+  --btn-bg-hover: var(--color-accent-hover);
+  --btn-border: transparent;
+  --btn-border-hover: transparent;
+  --btn-color: #ffffff;
+  --btn-shadow: 0 12px 26px rgba(16, 185, 129, 0.38);
+  --btn-shadow-hover: 0 16px 34px rgba(16, 185, 129, 0.48);
 }
 

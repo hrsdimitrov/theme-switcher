@@ -29,7 +29,7 @@ You can either use the hosted version or run it yourself.
 
 Styles are authored as SCSS partials (plus design tokens in JavaScript). Vite compiles the SCSS to CSS, applies bundling/optimization, and emits an optimized stylesheet referenced from the built HTML.
 
-Source maps are enabled in the Vite config so DevTools can map compiled styles back to their original sources while developing the app.
+Source maps are enabled in the Vite config so DevTools can map compiled styles back to their original sources while developing the app. When running `npm run dev`, you can inspect any element in Chrome DevTools and follow the rule links in the **Styles** panel to the original SCSS files under `src/styles/...`.
 
 ### Where to find generated assets
 
