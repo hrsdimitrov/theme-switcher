@@ -92,37 +92,52 @@ It also uses the following theme tokens (example for light theme):
 ### `background-color` property
 
 **Computer value:** `rgb(37, 99, 235)`
+
 **Styles chain:** `.preview-button` sets the `background-color` property to `var(--btn-bg)`. It also sets `-btn-bg` to be `var(--color-surface-hover)`. `--color-surface-hover` comes from the current active theme. But then `.preview-button--primary` overwrites `var(--btn-bg)` to be `var(--color-primary)` which also comes from the current active theme `:root`.
+
 **Generated CSS location:** Since all of the CSS is merged and minified, the given location by the DevTools is the first line of the merged file. Actual location: index-B85dirU.css, line 1, column 2845.
+
 **Original authored source:** Clicking the rule jumps back to `_buttons.scss` at the background: `var(--btn-bg);` and `--btn-bg: var(--color-primary);` lines. Following `--color-primary` leads to `_light.scss` where the actual hex color is authored.
 
 ### `color` property
 
 **Computer value:** `rgb(255, 255, 255)`
+
 **Styles chain:** `.preview-button` sets the `color` property to `var(--btn-color)`. It also sets `-btn-color` to be `var(--color-text)`. `--color-text` comes from the current active theme. But then `.preview-button--primary` overwrites `var(--btn-color)` to be `#ffffff`.
+
 **Generated CSS location:** Since all of the CSS is merged and minified, the given location by the DevTools is the first line of the merged file. Actual location: index-B85dirU.css, line 1, column 2877.
+
 **Original authored source:** Clicking the rule jumps back to `_buttons.scss` at the `color: var(--btn-color);` and `--btn-color: #ffffff` lines. 
 
 
 ### `padding` property
 
 **Computer value:** `padding: 7.2px 15.2px`
+
 **Styles chain:** property comes from `.preview-button` in the generated CSS, but it also relates to the reset file where we have `box-sizing: border-box;`. 7.2px and 15.2px are computed from the rem properties in the style file.  
+
 **Generated CSS location:** Since all of the CSS is merged and minified, the given location by the DevTools is the first line of the merged file. Actual location: index-B85dirU.css, line 1, column 2511.
+
 **Original authored source:** Clicking the rule jumps back to `_buttons.scss:13` line: `padding: 0.45rem 0.95rem;`.
 
 ### `box-shadow` property
 
 **Computer value:** `rgba(37, 99, 235, 0.35) 0px 14px 30px 0px`
+
 **Styles chain:** the base `.preview-button` sets `box-shadow: var(--btn-shadow)`, the .`preview-button--primary `variant overrides the shadow variables, and the hover rule `.preview-button:hover` applies `box-shadow: var(--btn-shadow-hover)`.
+
 **Generated CSS location:** Since all of the CSS is merged and minified, the given location by the DevTools is the first line of the merged file. Actual location: index-B85dirU.css, line 1, column 2930.
+
 **Original authored source:** all these declarations come from `_buttons.scss` under the three relevant rules.
 
 ### `transform`
 
 **Computer value:** `matrix(1, 0, 0, 1, 0, -1)`
+
 **Styles chain:** the base `.preview-button` sets `transform-origin: center` with no transform applied, while `.preview-button:hover` adds `transform: translateY(-1px)`.
+
 **Generated CSS location:** Since all of the CSS is merged and minified, the given location by the DevTools is the first line of the merged file. Actual location: index-B85dirU.css, line 1, column 3143.
+
 **Original authored source:** `transform-origin` and `hover transform` are stored in `_buttons.scss`.
 
 ## Problematic cases
