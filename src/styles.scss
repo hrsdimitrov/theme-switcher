@@ -1,6 +1,8 @@
 @use './styles/base/reset';
 @use './styles/base/globals';
+
 @use './styles/components/theme-switcher';
+@use './styles/components/preview-card';
 
 @use './styles/themes/light';
 @use './styles/themes/dark';

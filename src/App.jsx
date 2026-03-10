@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ThemeSwitcher } from './components/ThemeSwitcher'
+import { PreviewCard } from './components/PreviewCard'
 
 const THEMES = ['light', 'dark', 'neon', 'pastel']
 
@@ -29,7 +30,19 @@ function App() {
       </header>
 
       <main className="app__main">
-        {/* Preview components will go here */}
+        <div className="preview-grid">
+          <PreviewCard title="Buttons & actions" badge="Interactive">
+            Primary buttons, subtle ghost actions and accent chips share the same palette.
+          </PreviewCard>
+
+          <PreviewCard title="Panels & surfaces" badge="Layout">
+            Cards, sidebars and modals all inherit <code>--color-surface</code> and <code>--color-border</code>.
+          </PreviewCard>
+
+          <PreviewCard title="States & emphasis" badge="States">
+            Hover, focus and muted text are derived from the same variables across themes.
+          </PreviewCard>
+        </div>
       </main>
 
       <footer className="app__footer">
