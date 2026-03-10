@@ -1,16 +1,28 @@
-# React + Vite
+## JetBrains Theme Switcher – Internship Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains my solution for a JetBrains Frontend internship project. It is a small React app that shows a bundler-based CSS setup with source maps.
 
-Currently, two official plugins are available:
+### Project overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The JetBrains Theme Switcher is a single-page app for previewing JetBrains-style editor themes on a code snippet. You can switch between light and dark themes and adjust highlight styles to see the colors update instantly. Styles are written in modular SCSS and design tokens, then bundled into generated CSS with source maps so DevTools can trace final rules back to their sources.
 
-## React Compiler
+### Running the project
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+You can either use the hosted version or run it yourself.
 
-## Expanding the ESLint configuration
+- **Hosted**: `https://theme-switcher.hrsdimitrov.com/`
+- **Local dev**:
+    ```bash
+    npm install
+    npm run dev
+    ```
+- **Docker** (build + serve with Nginx):
+    ```bash
+    docker build -t jetbrains-theme-switcher .
+    docker run -p 8080:80 jetbrains-theme-switcher
+    ```
+    Then open `http://localhost:8080`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### CSS/DevTools report
+
+The write-up for Task #2 (CSS, DevTools, and source-map investigation) is available in `REPORT.md` in the project root.
